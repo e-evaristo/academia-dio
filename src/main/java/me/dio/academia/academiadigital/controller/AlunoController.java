@@ -7,6 +7,7 @@ import me.dio.academia.academiadigital.model.dto.AlunoUpdateDTO;
 import me.dio.academia.academiadigital.service.impl.AlunoService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -30,7 +31,7 @@ public class AlunoController {
     }
 
     @PostMapping
-    public Aluno create(@RequestBody AlunoCreateDTO aluno) {
+    public Aluno create(@Valid @RequestBody AlunoCreateDTO aluno) {
         return service.create(aluno);
     }
 
