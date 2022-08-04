@@ -1,6 +1,7 @@
 package me.dio.academia.academiadigital.controller;
 
 import me.dio.academia.academiadigital.model.Aluno;
+import me.dio.academia.academiadigital.model.AvaliacaoFisica;
 import me.dio.academia.academiadigital.model.dto.AlunoCreateDTO;
 import me.dio.academia.academiadigital.model.dto.AlunoUpdateDTO;
 import me.dio.academia.academiadigital.service.impl.AlunoService;
@@ -41,5 +42,10 @@ public class AlunoController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);
+    }
+
+    @GetMapping("/{id}/avaliacoes")
+    public List<AvaliacaoFisica> getAvaliacoes(@PathVariable Long id) {
+        return service.getAvaliacoesByAlunoId(id);
     }
 }

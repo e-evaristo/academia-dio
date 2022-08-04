@@ -63,4 +63,10 @@ public class AlunoService implements IAlunoService {
     public List<AvaliacaoFisica> getAllAvaliacaoFisicaId(Long id) {
         return null;
     }
+
+    @Override
+    public List<AvaliacaoFisica> getAvaliacoesByAlunoId(Long id) {
+        Aluno aluno = get(id);
+        return aluno.getAvaliacoes();
+    }
 }
