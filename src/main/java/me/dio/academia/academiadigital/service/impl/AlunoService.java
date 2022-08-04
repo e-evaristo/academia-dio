@@ -31,7 +31,7 @@ public class AlunoService implements IAlunoService {
 
     @Override
     public Aluno get(Long id) {
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
     }
 
     @Override
